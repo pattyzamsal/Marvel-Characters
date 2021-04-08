@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5245F47C79296D78AAA18819"
-               BuildableName = "MarvelCharacters.app"
+               BuildableName = "MarvelCharactersDebug.app"
                BlueprintName = "MarvelCharacters"
                ReferencedContainer = "container:MarvelCharacters.xcodeproj">
             </BuildableReference>
@@ -26,9 +26,17 @@
       buildConfiguration = "STG_Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "NO"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5245F47C79296D78AAA18819"
+            BuildableName = "MarvelCharactersDebug.app"
+            BlueprintName = "MarvelCharacters"
+            ReferencedContainer = "container:MarvelCharacters.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -61,17 +69,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5245F47C79296D78AAA18819"
-            BuildableName = "MarvelCharacters.app"
-            BlueprintName = "MarvelCharacters"
-            ReferencedContainer = "container:MarvelCharacters.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <CommandLineArguments>
-      </CommandLineArguments>
    </TestAction>
    <LaunchAction
       buildConfiguration = "STG_Debug"
@@ -88,13 +85,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5245F47C79296D78AAA18819"
-            BuildableName = "MarvelCharacters.app"
+            BuildableName = "MarvelCharactersDebug.app"
             BlueprintName = "MarvelCharacters"
             ReferencedContainer = "container:MarvelCharacters.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "STG_Release"
@@ -107,13 +102,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5245F47C79296D78AAA18819"
-            BuildableName = "MarvelCharacters.app"
+            BuildableName = "MarvelCharactersDebug.app"
             BlueprintName = "MarvelCharacters"
             ReferencedContainer = "container:MarvelCharacters.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-      </CommandLineArguments>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "STG_Debug">
