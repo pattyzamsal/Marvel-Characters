@@ -17,6 +17,7 @@ public enum WebServiceProtocolError: Error {
     case serializationError
     case notFound
     case server
+    case noConnation
 }
 
 extension WebServiceProtocolError: LocalizedError {
@@ -30,6 +31,8 @@ extension WebServiceProtocolError: LocalizedError {
             return "Cannot find the request"
         case .server:
             return "Error server"
+        case .noConnation:
+            return "Perhaps, you have problems with your connection"
         }
     }
 }

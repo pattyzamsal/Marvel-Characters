@@ -10,14 +10,11 @@ import Alamofire
 import AlamofireImage
 
 final class APIClient: WebServiceProtocol {
-    func validateConnectInternet() -> Bool {
-        if let network = NetworkReachabilityManager() {
-            return network.isReachable
-        }
-        return false
-    }
-    
     func execute<Output>(endpoint: APIRouter, completion: @escaping WebServiceHandler<Output>) {
+        if !validateConnectInternet() {
+            completion(.failure(error: WebServiceProtocolError.noConnation))
+            return
+        }
         let request = endpoint as URLRequestConvertible
         AF.request(request)
             .logRequest()
@@ -49,6 +46,13 @@ final class APIClient: WebServiceProtocol {
 }
 
 private extension APIClient {
+    func validateConnectInternet() -> Bool {
+        if let network = NetworkReachabilityManager() {
+            return network.isReachable
+        }
+        return false
+    }
+    
     func isOccuringAnError(response: HTTPURLResponse) -> Bool {
         return  [401, 403, 405, 409].contains(response.statusCode) || (500..<600 ~= response.statusCode)
     }

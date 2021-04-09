@@ -13,7 +13,6 @@ public protocol CharactersUseCaseContract {
 
 public enum CharactersUseCaseError: Error {
     case generic
-    case noConnection
 }
 
 public final class CharactersUseCase {
@@ -26,6 +25,13 @@ public final class CharactersUseCase {
 
 extension CharactersUseCase: CharactersUseCaseContract {
     public func getListCharacters(page: Int, completion: @escaping (Result<DataCharacters, Error>) -> Void) {
-        return provider.getListCharacters(page: page, completion: completion)
+        return provider.getListCharacters(page: page) { (result) in
+            switch result {
+            case .success(let dataCharacters):
+                completion(.success(dataCharacters))
+            case .failure:
+                completion(.failure(CharactersUseCaseError.generic))
+            }
+        }
     }
 }

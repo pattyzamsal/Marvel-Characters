@@ -9,9 +9,8 @@ import Foundation
 
 public enum CharacterDetailProviderContractError: Error {
     case generic
-    case noConnection
 }
 
 public protocol CharacterDetailProviderContract {
-    func getCharacterDetail(id: String, completion: @escaping (Result<CharacterMarvel, Error>) -> Void)
+    func getCharacterDetailBy(id: String, completion: @escaping (Result<CharacterMarvel, Error>) -> Void)
 }

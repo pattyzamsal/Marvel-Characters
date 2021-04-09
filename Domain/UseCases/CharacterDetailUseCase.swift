@@ -8,12 +8,11 @@
 import Foundation
 
 public protocol CharacterDetailUseCaseContract {
-    func getCharacterDetail(id: String, completion: @escaping (Result<CharacterMarvel, Error>)  -> Void)
+    func getCharacterDetailBy(id: String, completion: @escaping (Result<CharacterMarvel, Error>)  -> Void)
 }
 
 public enum CharacterDetailUseCaseError: Error {
     case generic
-    case noConnection
 }
 
 public final class CharacterDetailUseCase {
@@ -25,7 +24,14 @@ public final class CharacterDetailUseCase {
 }
 
 extension CharacterDetailUseCase: CharacterDetailUseCaseContract {
-    public func getCharacterDetail(id: String, completion: @escaping (Result<CharacterMarvel, Error>) -> Void) {
-        return provider.getCharacterDetail(id: id, completion: completion)
+    public func getCharacterDetailBy(id: String, completion: @escaping (Result<CharacterMarvel, Error>) -> Void) {
+        return provider.getCharacterDetailBy(id: id) { (result) in
+            switch result {
+            case .success(let characterDetail):
+                completion(.success(characterDetail))
+            case .failure:
+                completion(.failure(CharacterDetailUseCaseError.generic))
+            }
+        }
     }
 }

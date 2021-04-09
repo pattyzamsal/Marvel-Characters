@@ -9,7 +9,6 @@ import Foundation
 
 public enum CharactersProviderContractError: Error {
     case generic
-    case noConnection
 }
 
 public protocol CharactersProviderContract {
