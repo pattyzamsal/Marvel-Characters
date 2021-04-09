@@ -68,5 +68,11 @@
 	<string>Light</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>Public key</key>
+	<string>$(PUBLIC_KEY)</string>
+	<key>Private key</key>
+	<string>$(PRIVATE_KEY)</string>
+	<key>Base url</key>
+	<string>$(BASE_URL)</string>
 </dict>
 </plist>

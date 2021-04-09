@@ -1,0 +1,13 @@
+//
+//  STG.xcconfig
+//  MarvelCharacters
+//
+//  Created by Patricia Zambrano on 8/04/21.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+PUBLIC_KEY = 1// TODO you need to add your own public key here
+PRIVATE_KEY = 1// TODO you need to add your own private key here
+BASE_URL = https:/$()/$()gateway.marvel.com/$()v1/$()public
