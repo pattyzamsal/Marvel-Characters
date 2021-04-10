@@ -14,6 +14,17 @@ target 'Data' do
   include_pods
 end
 
+target 'DataTests' do
+  include_pods
+end
+
+target 'Domain' do
+  include_pods
+end
+
+target 'DomainTests' do
+  include_pods
+end
 
 target 'MarvelCharacters' do
   include_pods

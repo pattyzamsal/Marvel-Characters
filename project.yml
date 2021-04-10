@@ -117,6 +117,7 @@ targets:
     settings:
       base:
         INFOPLIST_FILE: Sources/Resources/Info.plist
+        SWIFT_OBJC_BRIDGING_HEADER: Sources/Resources/MarvelCharacters-Bridging-Header.h
         FRAMEWORK_SEARCH_PATHS: [$(inherited)]
         HEADER_SEARCH_PATHS: [$(inherited), Sources]
     dependencies:
