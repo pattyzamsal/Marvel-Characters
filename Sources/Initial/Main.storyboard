@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E4i-cu-ps8">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Initial View Controller-->
+        <scene sceneID="9ns-bv-n2w">
+            <objects>
+                <viewController id="4Rv-rb-k8F" customClass="InitialViewController" customModule="MarvelCharacters" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eZs-gk-wtA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AaS-qj-8u7">
+                                <rect key="frame" x="57" y="235.5" width="300" height="303"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo-Marvel-app" translatesAutoresizingMaskIntoConstraints="NO" id="IAv-PD-7gi">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="169"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="2yl-Xz-WMX"/>
+                                            <constraint firstAttribute="width" secondItem="IAv-PD-7gi" secondAttribute="height" multiplier="16:9" id="8Of-kn-Rfp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In this app, you can access to a list of marvel characters and you can find a detail of each one of them" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpB-iZ-GJ7">
+                                        <rect key="frame" x="0.0" y="184" width="300" height="72"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d6v-m8-ROG">
+                                        <rect key="frame" x="122.5" y="271" width="55" height="32"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startButtonDidTap:" destination="4Rv-rb-k8F" eventType="touchUpInside" id="5dv-E0-pnH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="kD8-I8-HLI"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4QT-2e-6q0"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AaS-qj-8u7" firstAttribute="centerY" secondItem="4QT-2e-6q0" secondAttribute="centerY" id="PSF-eb-2g8"/>
+                            <constraint firstItem="AaS-qj-8u7" firstAttribute="centerX" secondItem="4QT-2e-6q0" secondAttribute="centerX" id="mng-JT-dho"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ykL-Jn-dX3"/>
+                    <connections>
+                        <outlet property="startButton" destination="d6v-m8-ROG" id="yty-q1-28Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBF-3m-Rrj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="500.00000000000006" y="-16.071428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wbx-xd-9ZC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="E4i-cu-ps8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="mUu-Sq-y21">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.99308496710000005" green="0.24422183629999999" blue="0.1505164504" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <imageReference key="backIndicatorImage" image="chevron.backward" catalog="system" renderingMode="template"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4Rv-rb-k8F" kind="relationship" relationship="rootViewController" id="qOf-Ee-uFX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R54-YS-gAc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-410.14492753623193" y="-16.071428571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo-Marvel-app" width="1280" height="720"/>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
+    </resources>
+</document>
