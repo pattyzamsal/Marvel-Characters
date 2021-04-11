@@ -12,7 +12,14 @@ public protocol CharactersUseCaseContract {
 }
 
 public enum CharactersUseCaseError: Error {
-    case generic
+    case generic(error: String)
+    
+    public var errorDescription: String? {
+        switch self {
+        case .generic(let error):
+            return error
+        }
+    }
 }
 
 public final class CharactersUseCase {
@@ -29,8 +36,11 @@ extension CharactersUseCase: CharactersUseCaseContract {
             switch result {
             case .success(let dataCharacters):
                 completion(.success(dataCharacters))
-            case .failure:
-                completion(.failure(CharactersUseCaseError.generic))
+            case .failure(let error):
+                if let providerError = error as? CharactersProviderContractError,
+                   let message = providerError.errorDescription {
+                    completion(.failure(CharactersUseCaseError.generic(error: message)))
+                }
             }
         }
     }

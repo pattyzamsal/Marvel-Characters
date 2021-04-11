@@ -8,7 +8,14 @@
 import Foundation
 
 public enum CharacterDetailProviderContractError: Error {
-    case generic
+    case generic(error: String)
+    
+    public var errorDescription: String? {
+        switch self {
+        case .generic(let error):
+            return error
+        }
+    }
 }
 
 public protocol CharacterDetailProviderContract {

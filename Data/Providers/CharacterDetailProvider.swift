@@ -22,7 +22,11 @@ extension CharacterDetailProvider: CharacterDetailProviderContract {
             guard case .success(modelData: let entity) = response,
                   let model = try? entity?.toDomain(),
                   let character = model.data.results.first else {
-                completion(.failure(CharacterDetailProviderContractError.generic))
+                if case .failure(let error) = response,
+                   let webError = error as? WebServiceProtocolError,
+                   let message = webError.errorDescription {
+                    completion(.failure(CharacterDetailProviderContractError.generic(error: message)))
+                }
                 return
             }
             completion(.success(character))

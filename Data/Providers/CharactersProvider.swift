@@ -21,7 +21,11 @@ extension CharactersProvider: CharactersProviderContract {
         apiClient.execute(endpoint: .getListCharacters(page: page)) { (response: WebServiceResponse<CharactersEntity>) in
             guard case .success(modelData: let entity) = response,
                   let model = try? entity?.toDomain() else {
-                completion(.failure(CharactersProviderContractError.generic))
+                if case .failure(let error) = response,
+                   let webError = error as? WebServiceProtocolError,
+                   let message = webError.errorDescription {
+                    completion(.failure(CharactersProviderContractError.generic(error: message)))
+                }
                 return
             }
             completion(.success(model.data))
