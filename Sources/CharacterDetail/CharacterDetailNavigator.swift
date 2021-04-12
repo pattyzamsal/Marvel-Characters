@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 final class CharacterDetailNavigator {
     private weak var viewController: UIViewController?
     

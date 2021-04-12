@@ -42,24 +42,13 @@ class CharactersListViewController: BaseViewController {
 }
 
 private extension CharactersListViewController {
-    func showLoading() {
-        view.isUserInteractionEnabled = false
-        activityIndicator.alpha = 1
-        activityIndicator.startAnimating()
-    }
-    
-    func hideLoading() {
-        view.isUserInteractionEnabled = true
-        activityIndicator.alpha = 0
-        activityIndicator.stopAnimating()
-    }
-    
     func showEmptyView(isHidden: Bool) {
         tableView.isHidden = !isHidden
         emptyView.isHidden = isHidden
     }
     
     func setupView() {
+        setActivityIndicator(activityIndicator)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = Constants.estimatedRowHeight

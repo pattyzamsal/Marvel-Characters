@@ -14,7 +14,7 @@ enum CharacterDetailContract {
 }
 
 protocol CharacterDetailPresenterContract {
-    func getCharacter()
+    func getCharacter(id: String)
     func goToPreviousView()
 }
 
@@ -28,6 +28,7 @@ protocol CharacterDetailNavigatorContract {
 
 enum CharacterDetailViewState {
     case clear
-    case render(character: String)
+    case loading
+    case render(character: CharacterDetailViewModel)
     case error(error: String)
 }

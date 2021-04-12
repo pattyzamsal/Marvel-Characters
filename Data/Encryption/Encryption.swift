@@ -26,11 +26,6 @@ private extension Encryption {
             for byte in digest {
                 md5String += String(format:"%02x", UInt8(byte))
             }
-            if md5String.uppercased() == "8D84E6C45CE9044CAE90C064997ACFF1" {
-                print("Matching MD5 hash: 8D84E6C45CE9044CAE90C064997ACFF1")
-            } else {
-                print("MD5 hash does not match: \(md5String)")
-            }
             return md5String
         }
         return ""
