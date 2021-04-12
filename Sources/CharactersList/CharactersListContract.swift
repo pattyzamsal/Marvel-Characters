@@ -15,8 +15,9 @@ enum CharactersListContract {
 
 protocol CharactersListPresenterContract {
     func getCharactersList()
-    func didTapOnCharacter()
+    func didTapOnCharacter(id: Int)
     func getNextPage()
+    func isLastPage() -> Bool
     func goToPreviousView()
 }
 
@@ -31,6 +32,9 @@ protocol CharactersListNavigatorContract {
 
 enum CharactersListViewState {
     case clear
-    case render(characters: String)
+    case loading
+    case empty
+    case render(characters: [CharactersListViewModel])
+    case noMorePages
     case error(error: String)
 }

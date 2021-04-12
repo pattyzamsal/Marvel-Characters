@@ -20,4 +20,5 @@ enum TextsConstants: String {
     
     // MARK: - Character Detail
     case backTitle = "List"
+    case noMoreCharacters = "There aren't anymore characters to show"
 }

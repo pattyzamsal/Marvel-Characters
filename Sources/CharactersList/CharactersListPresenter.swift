@@ -36,11 +36,16 @@ final class CharactersListPresenter {
 
 extension CharactersListPresenter: CharactersListContract.Presenter {
     func getCharactersList() {
+        viewState = .loading
         charactersUseCase.getListCharacters(page: page) { (response) in
             switch response {
             case .success(let dataCharacters):
                 self.setValues(data: dataCharacters)
-                // todo falta crear el view model para enviarlo al viewcontroller
+                if dataCharacters.results.isEmpty {
+                    self.view?.render(state: .empty)
+                } else {
+                    self.view?.render(state: .render(characters: self.getCharactersListViewModel()))
+                }
             case .failure(let error):
                 var message = error.localizedDescription
                 if let errorUseCase = error as? CharactersUseCaseError,
@@ -52,14 +57,39 @@ extension CharactersListPresenter: CharactersListContract.Presenter {
         }
     }
     
-    func didTapOnCharacter() {
-        // todo
-        navigator.presentCharacterDetail(id: "",
-                                         name: "")
+    func didTapOnCharacter(id: Int) {
+        guard let character = getCharacterBy(id: id) else {
+            return
+        }
+        navigator.presentCharacterDetail(id: "\(character.id)",
+                                         name: character.name)
     }
     
     func getNextPage() {
-        // todo cargar mas paginas
+        if page < totalPages {
+            page += 1
+            viewState = .loading
+            charactersUseCase.getListCharacters(page: page) { (response) in
+                switch response {
+                case .success(let dataCharacters):
+                    self.updateValues(data: dataCharacters)
+                    self.view?.render(state: .render(characters: self.getCharactersListViewModel()))
+                case .failure(let error):
+                    var message = error.localizedDescription
+                    if let errorUseCase = error as? CharactersUseCaseError,
+                       let errorDescription = errorUseCase.errorDescription {
+                        message = errorDescription
+                    }
+                    self.view?.render(state: .error(error: message))
+                }
+            }
+        } else {
+            self.view?.render(state: .noMorePages)
+        }
+    }
+    
+    func isLastPage() -> Bool {
+        return page == totalPages
     }
     
     func goToPreviousView() {
@@ -76,6 +106,22 @@ private extension CharactersListPresenter {
     }
     
     func setTotalOfPages() {
-        totalPages = Int(ceil(Double(total) / Double(limit)))
+        totalPages = Int(floor(Double(total) / Double(limit)))
+    }
+    
+    func updateValues(data: DataCharacters) {
+        listCharacters += data.results
+    }
+    
+    func getCharactersListViewModel() -> [CharactersListViewModel] {
+        return listCharacters.map {
+            CharactersListViewModel(id: $0.id,
+                                    name: $0.name,
+                                    photoURL: $0.thumbnailURL)
+        }
+    }
+    
+    func getCharacterBy(id: Int) -> CharacterMarvel? {
+        return listCharacters.filter{ $0.id == id }.first
     }
 }
