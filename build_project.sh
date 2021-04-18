@@ -1,1 +1,1 @@
-xcodegen generate && pod install
+xcodegen generate

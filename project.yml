@@ -5,6 +5,13 @@ options:
   bundleIdPrefix: "com.pattyzamsal"
   deploymentTarget:
     iOS: "13.0"
+packages:
+  Alamofire:
+    url: "https://github.com/Alamofire/Alamofire.git"
+    majorVersion: 5.2.0
+  AlamofireImage:
+    url: "https://github.com/Alamofire/AlamofireImage.git"
+    majorVersion: 4.2.0
 configs:
   STG_Debug: debug
   STG_Release: release 
@@ -72,12 +79,16 @@ targets:
     dependencies:
       - target: Domain
         embed: false
+      - package: Alamofire
+      - package: AlamofireImage
   DataTests:
     type: bundle.unit-test
     platform: iOS
     sources: DataTests
     dependencies:
       - target: Data
+      - package: Alamofire
+      - package: AlamofireImage
     settings:
       PRODUCT_NAME: "DataTests"
   Domain:
