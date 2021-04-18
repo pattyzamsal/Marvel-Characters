@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct CharacterMarvel {
+public struct CharacterMarvel: Equatable {
     public let id: Int
     public let name: String
     public let description: String
