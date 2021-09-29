@@ -15,6 +15,13 @@ class BaseViewController: UIViewController {
     
     private weak var activityIndicator: UIActivityIndicatorView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        if #available(iOS 15.0, *) {
+            setNavigationBarColors()
+        }
+    }
+    
     func setBackButton(title: String) {
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.topItem?.title = title
@@ -45,5 +52,14 @@ class BaseViewController: UIViewController {
                                          handler: didTapActionButton)
         alert.addAction(actionButton)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func setNavigationBarColors() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.getColorApp(name: .red)
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
     }
 }

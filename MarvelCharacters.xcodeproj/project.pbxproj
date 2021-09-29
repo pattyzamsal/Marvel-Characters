@@ -17,6 +17,7 @@
 		181E3F2D88186F07A7F12051 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CCC79195169394B995B212 /* CharacterDetailViewModel.swift */; };
 		183301AD4972A5DBB1F2B46A /* MockCharacterDetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6B1438CC4D001951B69FDC /* MockCharacterDetailProvider.swift */; };
 		25085EA4F87F7C60FDD628F1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF631CC3165E0257AD3C93A /* APIClient.swift */; };
+		2721CB1D2704E4FD0035D9E1 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2721CB1C2704E4FD0035D9E1 /* UIColorExtension.swift */; };
 		2B845E6BA3B458F717F20062 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = BB388BE08447B95C96820708 /* AlamofireImage */; };
 		311AED72A6603E64196DB6F6 /* CharacterDetailProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B85C649AD6C20D9C74781F /* CharacterDetailProviderTests.swift */; };
 		35A31939A6632D53176AC771 /* CharacterDetailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169AF8E649D93E6469AF279D /* CharacterDetailNavigator.swift */; };
@@ -220,6 +221,7 @@
 		22CA62A435437F2B151AFFE4 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		238976AC7AB1C6BDEDBC8875 /* CharactersProviderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersProviderContract.swift; sourceTree = "<group>"; };
 		255BE9AAB564C7CE1C0BDBFB /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
+		2721CB1C2704E4FD0035D9E1 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		2ADC36FB66307BACDAC0A3EA /* Injector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Injector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE0077216CABDAA92357D32 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CA6D5B38B3877DD654FF73D /* MockCharacterDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharacterDetailUseCase.swift; sourceTree = "<group>"; };
@@ -534,6 +536,7 @@
 				9B3A3E8238F23EABF390E39C /* LaunchScreen.storyboard */,
 				9F42E8CA6A398CFDEC2C8001 /* MarvelCharacters-Bridging-Header.h */,
 				C065CB83F3C6BA71D69AC43D /* SceneDelegate.swift */,
+				2721CB1C2704E4FD0035D9E1 /* UIColorExtension.swift */,
 				C453A8C1B41936A4F8AA6C46 /* TextsConstants.swift */,
 				3376D7002C5EBE75DACC4665 /* Configs */,
 			);
@@ -916,6 +919,7 @@
 				A3BE078FF623FC6B2DA854E8 /* AppDelegate.swift in Sources */,
 				ABAC91956A5BE5D14CD70F00 /* BaseViewController.swift in Sources */,
 				FB5D5DE20F5E120325E5931D /* CharacterDetailContract.swift in Sources */,
+				2721CB1D2704E4FD0035D9E1 /* UIColorExtension.swift in Sources */,
 				35A31939A6632D53176AC771 /* CharacterDetailNavigator.swift in Sources */,
 				3BE0C65BE5F8A0E68BC5AD84 /* CharacterDetailPresenter.swift in Sources */,
 				EDFD0D0D28F878B3BCC4A36E /* CharacterDetailViewController.swift in Sources */,
